@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="span9">
+    <section class="row-fluid">
+        <header class="span9 article-heading">
+            <h1><a href="{{ article.url }}" rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">
+                   {{ article.title }}</a></h1>
+        </header>
+        <section class="span3">
+            {{ article.locale_date }} 
+        </section>
+    </section>
+    <section class="row-fluid">
+        <section class="span11 article-content">
+            {{ article.content }}
+        </section>
+    </section>
+</section>
+{% endblock %}
+

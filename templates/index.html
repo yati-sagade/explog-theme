@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block active_home %}active{% endblock %}
+
+{% block content %}
+<section class="span9">
+    {% for article in articles %}
+        <section class="row-fluid">
+            <section class="span9 postblock offset1">
+                <section class="row-fluid">
+                    <section class="span9">
+                        <a href="{{SITEURL}}/{{article.url}}"><h3>{{ article.title }}</h3></a>
+                        {{ article.summary }}
+                    </section>
+                    <section class="span3 date muted">
+                        {{article.locale_date}}
+                    </section>
+                </section>
+            </section>
+        </section>
+    {% endfor %}
+</section>
+{% endblock %}

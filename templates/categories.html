@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block active_categories %}active{% endblock %}
+
+{% block content %}
+<section class="span9">
+    {% for category, articles in categories %}
+        <section class="row-fluid">
+            <section class="row-fluid">
+                <section class="span9 postblock offset1">
+                    <section class="row-fluid">
+                        <h3><a href=" {{ SITEURL }}/{{ category.url }}">
+                                {{ category }}
+                            </a></h3>
+                    </section>
+                    <section class="row-fluid">
+                        {% for article in articles %}
+                        <section class="span4 postblock">
+                            <h6>
+                                <a href="{{ SITEURL }}/{{ article.url }}">
+                                    {{ article.title }}
+                                </a>
+                            </h6>
+                         </section>
+                         {% endfor %}
+                    </section>
+                </section>
+            </section>
+        <section>
+    {% endfor %}
+</section>
+{% endblock %}

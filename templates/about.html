@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block active_about %}active{% endblock %}
+
+{% block content %}
+<section class="span9">
+    <section class="row-fluid">
+        <header>
+            <h1 class="article-heading">{{ page.title }}</h1>
+        </header>
+    </section>
+    <section class="row-fluid">
+        <section class="span11 article-content">
+            {{ page.content }}
+        </section>
+    </section>
+    <footer class="row-fluid">
+        <section class="span10" id="connect">
+            <ul>
+                {% for platform, link in SOCIAL %}
+                <li class="social-icon">
+                    <a href="{{ link }}" title="{{ platform }}"><i class="icon-{{platform}} icon-large"></i></a>
+                </li>{% if loop.revindex0 %} | {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    </footer>
+</section>
+{% endblock %}
